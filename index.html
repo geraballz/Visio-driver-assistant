@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionalidades de la App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #6200ea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .feature.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature img {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .feature h2 {
+            margin: 0 0 10px 0;
+            color: #6200ea;
+        }
+        .feature p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Funcionalidades de la App</h1>
+    </header>
+
+    <div class="container">
+        <!-- Funcionalidad 1 -->
+        <div class="feature" id="feature1">
+            <img src="https://via.placeholder.com/150" alt="Funcionalidad 1">
+            <div>
+                <h2>Función 1: Notificaciones Inteligentes</h2>
+                <p>Recibe alertas personalizadas en tiempo real para mantenerte siempre informado.</p>
+            </div>
+        </div>
+
+        <!-- Funcionalidad 2 -->
+        <div class="feature" id="feature2">
+            <img src="https://via.placeholder.com/150" alt="Funcionalidad 2">
+            <div>
+                <h2>Función 2: Gestión de Tareas</h2>
+                <p>Organiza tus tareas diarias de manera eficiente con nuestra herramienta integrada.</p>
+            </div>
+        </div>
+
+        <!-- Funcionalidad 3 -->
+        <div class="feature" id="feature3">
+            <img src="https://via.placeholder.com/150" alt="Funcionalidad 3">
+            <div>
+                <h2>Función 3: Análisis de Datos</h2>
+                <p>Obtén informes detallados y gráficos interactivos para tomar decisiones informadas.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Mi App. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Animación al hacer scroll
+        document.addEventListener("DOMContentLoaded", function() {
+            const features = document.querySelectorAll('.feature');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.5 }); // Activa la animación cuando el 50% del elemento es visible
+
+            features.forEach(feature => {
+                observer.observe(feature);
+            });
+        });
+    </script>
+
+</body>
+</html>
