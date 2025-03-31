@@ -5,60 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funcionalidades de la App</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #417FE1;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .feature {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .feature.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .feature img {
-            width: 350px;
-            height: 150px;
-            margin-right: 20px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .feature h2 {
-            margin: 0 0 10px 0;
-            color: #417FE1;
-        }
-        .feature p {
-            margin: 0;
-            line-height: 1.6;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
-        }
+        /* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+header {
+    background-color: #417FE1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.feature {
+    display: flex;
+    flex-direction: row; /* Por defecto, los elementos estarán en una fila */
+    align-items: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.feature.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.feature img {
+    width: 350px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.feature h2 {
+    margin: 0 0 10px 0;
+    color: #417FE1;
+}
+.feature p {
+    margin: 0;
+    line-height: 1.6;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce los márgenes y el relleno */
+    }
+    .feature {
+        flex-direction: column; /* Cambia a diseño vertical */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+    }
+    .feature img {
+        width: 100%; /* Haz que la imagen sea del ancho completo */
+        height: auto; /* Mantén la proporción de la imagen */
+        margin-bottom: 10px; /* Agrega espacio entre la imagen y el texto */
+    }
+    .feature h2 {
+        font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    }
+    .feature p {
+        font-size: 1rem; /* Ajusta el tamaño del párrafo */
+    }
+    header {
+        padding: 10px;
+        font-size: 1.8rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+    footer {
+        font-size: 0.9rem; /* Reduce el tamaño del texto del pie de página */
+    }
+}
+
     </style>
 </head>
 <body>
