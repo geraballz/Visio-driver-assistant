@@ -6,91 +6,106 @@
     <title>Funcionalidades de la App</title>
     <style>
         /* Estilos básicos */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
-header {
-    background-color: #417FE1;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.feature {
-    display: flex;
-    flex-direction: row; /* Por defecto, los elementos estarán en una fila */
-    align-items: center;
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.feature.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.feature img {
-    width: 350px;
-    height: 150px;
-    margin-right: 20px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-.feature h2 {
-    margin: 0 0 10px 0;
-    color: #417FE1;
-}
-.feature p {
-    margin: 0;
-    line-height: 1.6;
-}
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    margin-top: 40px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #417FE1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .feature.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature img {
+            width: 350px;
+            height: 150px;
+            margin-right: 20px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .feature h2 {
+            margin: 0 0 10px 0;
+            color: #417FE1;
+        }
+        .feature p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
 
-/* Media Query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px; /* Reduce los márgenes y el relleno */
-    }
-    .feature {
-        flex-direction: column; /* Cambia a diseño vertical */
-        align-items: flex-start; /* Alinea los elementos al inicio */
-    }
-    .feature img {
-        width: 100%; /* Haz que la imagen sea del ancho completo */
-        height: auto; /* Mantén la proporción de la imagen */
-        margin-bottom: 10px; /* Agrega espacio entre la imagen y el texto */
-    }
-    .feature h2 {
-        font-size: 1.5rem; /* Ajusta el tamaño del texto */
-    }
-    .feature p {
-        font-size: 1rem; /* Ajusta el tamaño del párrafo */
-    }
-    header {
-        padding: 10px;
-        font-size: 1.8rem; /* Reduce el tamaño del título en pantallas pequeñas */
-    }
-    footer {
-        font-size: 0.9rem; /* Reduce el tamaño del texto del pie de página */
-    }
-}
+        /* Contenedor responsivo para el video */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Mantiene la relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
 
+        /* Media Query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .feature {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .feature img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+            .feature h2 {
+                font-size: 1.5rem;
+            }
+            .feature p {
+                font-size: 1rem;
+            }
+            header {
+                padding: 10px;
+                font-size: 1.8rem;
+            }
+            footer {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,23 +113,26 @@ footer {
     <header>
         <h1>Visio Driver Assistant</h1>
     </header>
-<!-- Video de YouTube -->
-<div style="text-align: center; margin: 20px auto;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/mO0oyVFWT28" frameborder="0" allowfullscreen></iframe>
-</div>
-<!-- Enlace a la App Store con icono -->
-<div style="text-align: center; margin: 20px auto;">
-    <a href="https://apps.apple.com/mx/app/visio-driver-assistant/id6743371166" target="_blank">
-        <img src="appstore_icon.png" alt="App Store" style="width: 150px; height: auto;">
-    </a>
-</div>
+
+    <!-- Contenedor responsivo para el video -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/mO0oyVFWT28" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Enlace a la App Store con icono -->
+    <div style="text-align: center; margin: 20px auto;">
+        <a href="https://apps.apple.com/mx/app/visio-driver-assistant/id6743371166" target="_blank">
+            <img src="appstore_icon.png" alt="App Store" style="width: 150px; height: auto;">
+        </a>
+    </div>
+
     <div class="container">
         <!-- Funcionalidad 1 -->
         <div class="feature" id="feature1">
             <img src="appstore_1.png" alt="Funcionalidad 1">
             <div>
                 <h2>Detect and avoid accidents</h2>
-                <p>Simply let Visio Driver Assistant help you identify critical objects and potential hazards in case of a possible collision (primarily focus on the steering wheel over the app).</p>
+                <p>Simply let Visio Driver Assistant help you identify critical objects and potential hazards in case of a possible collision.</p>
             </div>
         </div>
 
@@ -123,7 +141,7 @@ footer {
             <img src="appstore_2.png" alt="Funcionalidad 2">
             <div>
                 <h2>Alerts in critical cases</h2>
-                <p>You will receive two types of alerts: a basic one and a stronger one, helping you pay closer attention to the details of what is happening.</p>
+                <p>You will receive two types of alerts: a basic one and a stronger one, helping you pay closer attention to the details.</p>
             </div>
         </div>
 
@@ -132,7 +150,7 @@ footer {
             <img src="appstore_3.png" alt="Funcionalidad 3">
             <div>
                 <h2>Save a photograph</h2>
-                <p>In Premium version, the the app offers the ability to store critical events on your phone to keep your own evidence.</p>
+                <p>In the Premium version, the app offers the ability to store critical events on your phone to keep your own evidence.</p>
             </div>
         </div>
     </div>
@@ -152,7 +170,7 @@ footer {
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.5 }); // Activa la animación cuando el 50% del elemento es visible
+            }, { threshold: 0.5 });
 
             features.forEach(feature => {
                 observer.observe(feature);
